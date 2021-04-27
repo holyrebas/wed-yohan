@@ -11,17 +11,19 @@
                 fade
                 :interval="4000"
                 controls
+                no-touch
+                no-hover-pause
               >
-                <b-carousel-slide :img-src="require('../images/02.jpeg')" />
-                <b-carousel-slide :img-src="require('../images/03.jpeg')" />
-                <b-carousel-slide :img-src="require('../images/06.jpeg')" />
-                <b-carousel-slide :img-src="require('../images/07.jpeg')" />
-                <b-carousel-slide :img-src="require('../images/10.jpeg')" />
-                <b-carousel-slide :img-src="require('../images/12.jpeg')" />
-                <b-carousel-slide :img-src="require('../images/13.jpeg')" />
-                <b-carousel-slide :img-src="require('../images/18.jpeg')" />
-                <b-carousel-slide :img-src="require('../images/29.jpeg')" />
-                <b-carousel-slide :img-src="require('../images/30.jpeg')" />
+                <b-carousel-slide :img-src="require('../images/photo01.jpeg')" />
+                <b-carousel-slide :img-src="require('../images/photo02.jpeg')" />
+                <b-carousel-slide :img-src="require('../images/photo03.jpeg')" />
+                <b-carousel-slide :img-src="require('../images/photo04.jpeg')" />
+                <b-carousel-slide :img-src="require('../images/photo05.jpeg')" />
+                <b-carousel-slide :img-src="require('../images/photo06.jpeg')" />
+                <b-carousel-slide :img-src="require('../images/photo07.jpeg')" />
+                <b-carousel-slide :img-src="require('../images/photo08.jpeg')" />
+                <b-carousel-slide :img-src="require('../images/photo09.jpeg')" />
+                <b-carousel-slide :img-src="require('../images/photo10.jpeg')" />
               </b-carousel>
             </div>
             <div class="content-inside-letter">
