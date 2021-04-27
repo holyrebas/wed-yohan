@@ -40,7 +40,7 @@
               <div class="content-inside-info-datetime">
                 <p class="content-inside-info-datetime-title"><b>언제</b></p>
                 <p><b>2021년 6월 12일</b> 오후 5시</p>
-                <p>축복의 시간까지, <b>{{ dday }}</b></p>
+                <p>{{ ddayTitle }}<b>{{ dday }}</b></p>
                 <p class="content-inside-info-datetime-dday"></p>
               </div>
               <br/>
@@ -127,6 +127,7 @@ export default {
       wish: '',
       isFocused: false,
       hasEntered: false,
+      ddayTitle: '',
       dday: ''
     }
   },
@@ -134,9 +135,16 @@ export default {
     const today = moment(new Date()).format('YYYY-MM-DD')
     const eventDay = moment('2021-06-12', 'YYYY-MM-DD')
     const dDay = eventDay.diff(today, 'days')
-    if (dDay == 0) this.dday = "오늘"
-    else if (dDay < 0) this.dday = Math.abs(dDay) + "일 지났음"
-    else this.dday = dDay + "일 남았음"
+    if (dDay == 0) {
+      this.ddayTitle = "축복의 시간, "
+      this.dday = "드디어 오늘"
+    } else if (dDay < 0) {
+      this.ddayTitle = "축복받은 후, "
+      this.dday = Math.abs(dDay) + "일째"
+    } else {
+      this.ddayTitle = "축복의 시간까지, "
+      this.dday = dDay + "일 남았음"
+    }
   },
   methods: {
     // Open/Close the inviation
@@ -150,7 +158,7 @@ export default {
       }, 660)
     },
     openGallery() {
-      window.open("https://twilight.kr", "_blank");
+      window.open("https://byeoul.com", "_blank");
     },
     doCopyAddress(message) {
       this.$copyText(message)
