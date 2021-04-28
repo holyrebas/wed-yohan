@@ -4,9 +4,11 @@
         <a href="javascript:;" @click="skipAnimation()"></a>
         <a href="javascript:;" @click="skipAnimation()" class="minimum"></a>
         <a href="javascript:;" @click="skipAnimation()" class="maximum"></a>
+        <span id="editor-header-button">&nbsp;</span>
+        <b-tooltip ref="tooltip" target="editor-header-button" placement="right">Touch to skip</b-tooltip>
     </header>
     <!-- Date -->
-    <p class="code"><span>Last Login: {{ startDate }}</span></p>
+    <p class="code" id="coda"><span>Last Login: {{ startDate }}</span></p>
     <!-- Code area -->
     <pre>
       <code v-html="highlightedCode"></code>
@@ -55,6 +57,7 @@
       this.progressivelyTyping()
     },
     updated() {
+
       this.scrollToBottom()
     },
     computed: {
@@ -101,9 +104,16 @@
             }
           }
           typing = requestAnimationFrame(step)
+          setTimeout(() => {
+            this.$refs.tooltip.$emit('open')
+            setTimeout(() => {
+              this.$refs.tooltip.$emit('close')
+            }, 2000);
+          }, 10000);
         })
       },
       skipAnimation() {
+        this.$refs.tooltip.$emit('close')
         this.isSkipped = true
       },
     }
@@ -148,6 +158,9 @@
       &.maximum{
         background: #34C84A;
       }
+    }
+    #editor-header-button {
+      margin-left: 4px;
     }
   }
   p.code{
