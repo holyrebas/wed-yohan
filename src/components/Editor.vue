@@ -105,10 +105,12 @@
           }
           typing = requestAnimationFrame(step)
           setTimeout(() => {
-            this.$refs.tooltip.$emit('open')
-            setTimeout(() => {
-              this.$refs.tooltip.$emit('close')
-            }, 2000);
+            if (!this.isSkipped) {
+              this.$refs.tooltip.$emit('open')
+              setTimeout(() => {
+                this.$refs.tooltip.$emit('close')
+              }, 2000);
+            }
           }, 10000);
         })
       },
@@ -160,7 +162,7 @@
       }
     }
     #editor-header-button {
-      margin-left: 4px;
+      margin-left: 1px;
     }
   }
   p.code{
