@@ -282,7 +282,7 @@ export default {
                 .content-inside-info-datetime-title {
                   font-family: 'Nanum Myeongjo', serif;
                   font-size: 16px;
-                  font-weight: 600;
+                  font-weight: 700;
                   margin-bottom: 7px;
                 }
               }
@@ -292,7 +292,7 @@ export default {
                 .content-inside-info-location-title {
                   font-family: 'Nanum Myeongjo', serif;
                   font-size: 16px;
-                  font-weight: 600;
+                  font-weight: 700;
                   margin-bottom: 6px;
                 }
                 p {
@@ -307,10 +307,10 @@ export default {
                 font-family: 'Nanum Myeongjo', serif;
                 font-size: 16px;
                 margin-bottom: 1px;
-                font-weight: 600;
+                font-weight: 700;
               }
               .content-inside-accounts-to {
-                font-weight: 500;
+                font-weight: bold;
               }
               p {
                 margin-bottom: -8px;
@@ -324,7 +324,7 @@ export default {
                 font-family: 'Nanum Myeongjo', serif;
                 font-size: 16px;
                 margin-bottom: 2px;
-                font-weight: 600;
+                font-weight: 700;
               }
             }
             .content-inside-photo{

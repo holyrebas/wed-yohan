@@ -169,8 +169,8 @@
     margin: 0;
     color: #BBB;
     line-height: 1.2;
-    font-family: 'Roboto Mono', 'Menlo', 'Monaco', Courier, monospace !important;
-    font-weight: 500 !important;
+    font-family: 'Fira Code', 'Nanum Gothic Coding', monospace !important;
+    font-weight: 400 !important;
     font-size: 14px!important;
   }
   pre{
@@ -183,8 +183,8 @@
       margin: 0;
       color: #BBB;
       line-height: 1.2;
-      font-family: 'Roboto Mono', 'Menlo', 'Monaco', Courier, monospace !important;
-      font-weight: 500 !important;
+      font-family: 'Fira Code', 'Nanum Gothic Coding', monospace !important;
+      font-weight: 400 !important;
       background: transparent;
     }
   }
