@@ -88,7 +88,7 @@
              <div class="content-inside-gallery">
               <p class="content-inside-gallery-title"><b>일반 청첩장을 보려면</b></p>
               <p>
-                <span>이건 너무 개발자같죠? 구경가기</span>
+                <span>좀 더 아름다운 청첩장 보러가기</span>
                 <b-button id="button-yohan" size="sm" class="mb-1" variant="outline" @click="openGallery">
                   <b-icon icon="link45deg" aria-hidden="true"></b-icon>
                 </b-button>
@@ -142,10 +142,10 @@ export default {
       this.dday = "드디어 오늘"
     } else if (dDay < 0) {
       this.ddayTitle = "축복받은 후, "
-      this.dday = Math.abs(dDay) + "일째"
+      this.dday = "D+" + Math.abs(dDay)
     } else {
       this.ddayTitle = "축복의 시간까지, "
-      this.dday = dDay + "일 남았음"
+      this.dday = "D-" + dDay
     }
   },
   methods: {
@@ -267,8 +267,9 @@ export default {
             font-size: 13px;
             .content-inside-letter{
               text-align: center;
+              font-weight: 400;
               .content-inside-letter-title {
-                font-weight: bolder;
+                font-weight: 700;
                 margin-top: 30px;
                 font-size: 17px;
               }
@@ -310,7 +311,7 @@ export default {
                 font-weight: 700;
               }
               .content-inside-accounts-to {
-                font-weight: bold;
+                font-weight: 500;
               }
               p {
                 margin-bottom: -8px;
