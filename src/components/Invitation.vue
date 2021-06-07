@@ -48,15 +48,17 @@
               <br/>
               <div class="content-inside-info-location">
                 <p class="content-inside-info-location-title"><b>어디에서</b></p>
-                <p><b>여의도웨딩컨벤션</b> 3층 그랜드볼룸홀</p>
                 <p>
-                  <span>서울 영등포구 여의대로 14 </span>
-                  <b-button id="button-address" size="sm" class="mb-1" variant="outline" @click="doCopyAddress('서울 영등포구 여의대로 14')">
-                    <b-icon icon="file-earmark-text" aria-hidden="true"></b-icon>
+                  <b>여의도웨딩컨벤션</b> 3층 그랜드볼룸홀
+                  <b-button id="button-address" size="sm" class="mb-1" variant="outline" @click="openMap">
+                    <b-icon icon="map" aria-hidden="true"></b-icon>
                   </b-button>
-                  <b-popover placement="top" ref="popoverAddress" target="button-address" title="주소 복사 완료">
-                    서울 영등포구 여의대로 14 (KT여의도사옥)
-                  </b-popover>
+                </p>
+                <p class="content-inside-info-location-youtube">
+                  <span><b>유튜브 실시간 스트리밍</b></span>
+                  <b-button id="button-youtube" size="sm" class="mb-1" variant="outline" @click="openYoutube">
+                    <b-icon icon="youtube" aria-hidden="true"></b-icon>
+                  </b-button>
                 </p>
                 <br/>
               </div>
@@ -89,12 +91,12 @@
               <p class="content-inside-gallery-title"><b>일반 청첩장을 보려면</b></p>
               <p>
                 <span>좀 더 아름다운 청첩장 보러가기</span>
-                <b-button id="button-yohan" size="sm" class="mb-1" variant="outline" @click="openGallery">
+                <b-button id="button-invitation" size="sm" class="mb-1" variant="outline" @click="openGallery">
                   <b-icon icon="link45deg" aria-hidden="true"></b-icon>
                 </b-button>
               </p>
               <br/>
-            </div>
+            </div>            
           </div>
         </div>
         <div class="cover-inside-left" :class="{'opening':isOpening}"></div>
@@ -159,8 +161,14 @@ export default {
         this.$emit('onClose')
       }, 660)
     },
+    openMap() {
+      window.open("https://place.map.kakao.com/8011957", "_blank");
+    },
     openGallery() {
       window.open("https://byeoul.com", "_blank");
+    },
+    openYoutube() {
+      window.open("https://www.youtube.com/channel/UCzw7e8_ypRICCtIAXvJepPQ", "_blank");
     },
     doCopyAddress(message) {
       this.$copyText(message)
@@ -297,7 +305,10 @@ export default {
                   margin-bottom: 6px;
                 }
                 p {
-                  margin-bottom: -2px;
+                  margin-bottom: -1px;
+                }
+                .content-inside-info-location-youtube {
+                  margin-top: -9px;
                 }
               }
             }
