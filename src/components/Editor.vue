@@ -109,7 +109,7 @@
               this.$refs.tooltip.$emit('open')
               setTimeout(() => {
                 this.$refs.tooltip.$emit('close')
-              }, 2000);
+              }, 7000);
             }
           }, 10000);
         })

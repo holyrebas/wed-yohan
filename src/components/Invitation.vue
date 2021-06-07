@@ -54,8 +54,8 @@
                     <b-icon icon="map" aria-hidden="true"></b-icon>
                   </b-button>
                 </p>
-                <p class="content-inside-info-location-youtube">
-                  <span><b>유튜브 실시간 스트리밍</b></span>
+                <p>
+                  <span><b>유튜브</b> 실시간 스트리밍</span>
                   <b-button id="button-youtube" size="sm" class="mb-1" variant="outline" @click="openYoutube">
                     <b-icon icon="youtube" aria-hidden="true"></b-icon>
                   </b-button>
@@ -162,7 +162,7 @@ export default {
       }, 660)
     },
     openMap() {
-      window.open("https://place.map.kakao.com/8011957", "_blank");
+      window.open("https://map.naver.com/v5/search/%EC%97%AC%EC%9D%98%EB%8F%84%EC%9B%A8%EB%94%A9%EC%BB%A8%EB%B2%A4%EC%85%98/place/11865877?c=14128116.2687101,4512087.6221383,15,0,0,0,dh", "_blank");
     },
     openGallery() {
       window.open("https://byeoul.com", "_blank");
@@ -170,19 +170,9 @@ export default {
     openYoutube() {
       window.open("https://www.youtube.com/channel/UCzw7e8_ypRICCtIAXvJepPQ", "_blank");
     },
-    doCopyAddress(message) {
-      this.$copyText(message)
-      this.$refs.popoverByeoul.$emit('close')
-      this.$refs.popoverYohan.$emit('close')
-      this.$refs.popoverAddress.$emit('open')
-      setTimeout(() => {
-        this.$refs.popoverAddress.$emit('close')
-      }, 2000);
-    },
     doCopyYohan(message) {
       this.$copyText(message)
       this.$refs.popoverByeoul.$emit('close')
-      this.$refs.popoverAddress.$emit('close')
       this.$refs.popoverYohan.$emit('open')
       setTimeout(() => {
         this.$refs.popoverYohan.$emit('close')
@@ -190,7 +180,6 @@ export default {
     },
     doCopyByeoul(message) {
       this.$copyText(message)
-      this.$refs.popoverAddress.$emit('close')
       this.$refs.popoverYohan.$emit('close')
       this.$refs.popoverByeoul.$emit('open')
       setTimeout(() => {
@@ -302,13 +291,10 @@ export default {
                   font-family: 'Nanum Myeongjo', serif;
                   font-size: 16px;
                   font-weight: 700;
-                  margin-bottom: 6px;
+                  margin-bottom: 2px;
                 }
                 p {
-                  margin-bottom: -1px;
-                }
-                .content-inside-info-location-youtube {
-                  margin-top: -9px;
+                  margin-bottom: -8px;
                 }
               }
             }
